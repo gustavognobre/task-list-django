@@ -1,1 +1,12 @@
-<h1>Task: {{task}}</h1>
+<h1>Detalhes da Tarefa</h1>
+
+<h2>Tarefa: {{ task.title }}</h2>
+<ul>
+  <li><strong>Descrição:</strong> {{ task.description }}</li>
+  <li><strong>Concluída:</strong> {{ task.completed|yesno:"Sim,Não" }}</li>
+  <li><strong>Criada em:</strong> {{ task.created_ed|date:"d/m/Y H:i" }}</li>
+  <li><strong>Prazo:</strong> {{ task.due_date|date:"d/m/Y H:i" }}</li>
+  <li><strong>Usuário responsável:</strong> {{ task.user }}</li>
+</ul>
+
+<a href="{% url 'tasks' %}">Voltar para a lista de tarefas</a>
